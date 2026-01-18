@@ -1,0 +1,24 @@
+workflows:
+  flutter-web:
+    name: Flutter Web
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+      - name: Build for web
+        script: |
+          flutter build web --release
+    artifacts:
+      - build/web/**
+    publishing:
+      email:
+        recipients:
+          - user@example.com
+        notify:
+          success: true
+          failure: false
