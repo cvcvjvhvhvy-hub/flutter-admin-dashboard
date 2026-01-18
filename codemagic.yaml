@@ -7,9 +7,11 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-      - name: Get Flutter packages
+      - name: Enable web support and get packages
         script: |
-          flutter packages pub get
+          flutter config --enable-web
+          flutter create . --platforms web || true
+          flutter pub get
       - name: Build for web
         script: |
           flutter build web --release
