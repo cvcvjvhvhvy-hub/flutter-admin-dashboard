@@ -22,28 +22,3 @@ workflows:
         notify:
           success: true
           failure: false
-  flutter-web:
-    name: Flutter Web
-    max_build_duration: 60
-    environment:
-      flutter: stable
-      xcode: latest
-      cocoapods: default
-    scripts:
-      - name: Enable web support and get packages
-        script: |
-          flutter config --enable-web
-          flutter create . --platforms web || true
-          flutter pub get
-      - name: Build for web
-        script: |
-          flutter build web --release
-    artifacts:
-      - build/web/**
-    publishing:
-      email:
-        recipients:
-          - user@example.com
-        notify:
-          success: true
-          failure: false
