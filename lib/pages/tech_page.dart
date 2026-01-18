@@ -30,7 +30,7 @@ class _TechPageState extends State<TechPage> {
           : Padding(
               padding: const EdgeInsets.all(12.0),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('المدير التقني', style: Theme.of(context).textTheme.headline6),
+                Text('المدير التقني', style: Theme.of(context).textTheme.headlineSmall),
                 SizedBox(height: 12),
                 Card(child: ListTile(title: Text('المحتوى الثابت (من نحن، الخصوصية، الشروط)'), subtitle: Text('تحرير وحفظ النصوص الثابتة للتطبيق'))),
                 Card(child: ListTile(title: Text('مراقبة الأداء'), subtitle: Text('عرض أخطاء تجريبية ومؤشرات'))),
